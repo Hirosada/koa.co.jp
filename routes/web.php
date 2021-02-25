@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/top', 'Main\MainController@index')->name('home');
+
+
 Route::get('top', function (){
 	return view('top');
 });
@@ -53,4 +56,3 @@ Route::post('complate', 'formController@get_data');
 
 
 Route::resource('todo', 'TopController'); 
-
