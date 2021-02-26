@@ -17,11 +17,6 @@ Route::get('/', function () {
 
 Route::get('/top', 'Main\MainController@index')->name('home');
 
-
-Route::get('top', function (){
-	return view('top');
-});
-
 Route::get('news', function(){
 	return view('news');
 });

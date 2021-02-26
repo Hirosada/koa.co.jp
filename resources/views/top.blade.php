@@ -17,92 +17,25 @@
         <li class="dspIB"><a href="/index" class="textnone white topic7 mgR50px menuHover"> Top</a></li>
       </ul>
     </div>
-
-    <div class=" clearfix toppd sectionbg mgT100px">
-      <div class="clearfix">
-        <div class="center">
-          <span class="topic7 f30px">Link</span>
-        </div>
-        <ul class="lihidden fL bnr">
-          <a href="http://www.sokushiro.com/" target="_blank" rel="noopener" class="textnone black topic7">
-            <li><img src="img/link_bannr_11.gif"></li>
-            <li>有限会社 即城工務店</li>
-          </a>
-        </ul>
-        <ul class="lihidden fL bnr">
-          <a href="https://www.m-s-j.jp/" target="_blank" rel="noopener" class="textnone black topic7">
-            <li><img src="img/link_bannr_13.jpg"></li>
-            <li>日本モーゲージサービス株式会社</li>
-          </a>
-        </ul>
-        <ul class="lihidden fL bnr">
-          <a href="https://www.house-gmen.com/" target="_blank" rel="noopener" class="textnone black topic7">
-            <li><img src="img/link_bannr_14.jpg"></li>
-            <li>株式株式会社ハウスジーメン</li>
-          </a>
-        </ul>
-        <ul class="lihidden fL bnr">
-          <a href="https://www.rescue-center.jp/" target="_blank" rel="noopener" class="textnone black topic7">
-            <li><img src="img/link_bannr_16.jpg"></li>
-            <li>データレスキューセンター</li>
-          </a>
-        </ul>
-        <ul class="lihidden fL bnr">
-          <a href="http://www.shimax.jp/" target="_blank" rel="noopener" class="textnone black topic7">
-            <li><img src="img/link_bannr_5.gif"></li>
-            <li>島塚塗料　株式会社</li>
-          </a>
-
-        </ul>
-        <ul class="lihidden fL bnr">
-          <a href="https://www.e-house.co.jp/" target="_blank" rel="noopener" class="textnone black topic7">
-            <li><img src="img/link_bannr_8.gif"></li>
-            <li>株式会社喜太郎</li>
-          </a>
-        </ul>
-      </div>
-    </div>
     <div>
       <div class="center clearfix mgT50px slide-bottom sectionbg" style="padding: 0 79px;">
-      <div class="center mgT100px">
-      <span class="topic7 f30px">News</span>
-      </div>
-      <ul class="fL topic7 lihidden imgHover">
-        <a href="#" class="textnone black">
-          <li><img src="img/news/torii.jpg" width="259" height="194"></li>
-          <li class="topic4 f15px">News</li>
-          <li class="topic6">2019.10.5</li>
-          <li>不法投棄で困ってませんか？</li>
-        </a>
-      </ul>
-      <ul class="fL topic7 lihidden imgHover">
-        <a href="#" class="textnone black">
-          <li><img src="img/news/premiumu.jpg" width="259" height="194"></li>
-          <li class="topic4 f15px">News</li>
-          <li class="topic6">2018.6.20</li>
-          <li>プレミアム付住宅リフォーム券</li>
-        </a>
-      </ul>
-      <ul class="fL topic7 lihidden imgHover">
-        <a href="#" class="textnone black">
-          <li><img src="img/news/ticket.jpg" width="259" height="194"></li>
-          <li class="topic4 f15px">News</li>
-          <li class="topic6">2018.5.4</li>
-          <li>須恵町プレミアム付住宅リフォーム券 <br>取扱加盟店になりました。</li>
-        </a>
-      </ul>
-      <ul class="fL topic7 lihidden imgHover">
-        <a href="#" class="textnone black">
-          <li><img src="img/works/royal.jpg" width="259" height="194"></li>
-          <li class="topic4 f15px">Notice</li>
-          <li class="topic6">2018.4.19</li>
-          <li>店舗の施工例を追加しました。</li>
-        </a>
-      </ul>
+        <div class="center mgT100px">
+          <span class="topic7 f30px">News</span>
+        </div>
+        @foreach ($newsList as $news)
+          <ul class="fL topic7 lihidden imgHover">
+            <a href="#" class="textnone black">
+              <li><img src="img/news/torii.jpg" width="259" height="194"></li>
+              <li class="topic4 f15px">News</li>
+              <li class="topic6">{{ $news->news_display_started_at }}</li>
+              <li>{{ $news->news_tittle }}</li>
+            </a>
+          </ul>
+        @endforeach
     </div>
     <div class="anime center mgT100px slide-bottom">
       <a href="/todo" class="btn topic7 cp textnone">Read More</a>
-    </div>  
+    </div>
   </div>
 
   <div class="center mgT100px">
