@@ -15,17 +15,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('top', function (){
-	return view('top');
-});
+Route::get('/top', 'Main\MainController@index')->name('home');
+Route::get('/company', 'Main\MainController@aboutUs')->name('company.profile');
+Route::get('/news/detail/{$news_id?}', 'Main\MainController@newsDetail')->name('news.detail');
+Route::get('/news', 'Main\MainController@news')->name('news.top');
+Route::get('/business/detail/{$business_id}', 'Main\MainController@businessDetail')->name('business.detail');
 
-Route::get('news', function(){
-	return view('news');
-});
-
-Route::get('company', function() {
-	return view('company');
-});
 
 Route::get('service', function(){
 	return view('service');
@@ -53,4 +48,3 @@ Route::post('complate', 'formController@get_data');
 
 
 Route::resource('todo', 'TopController'); 
-

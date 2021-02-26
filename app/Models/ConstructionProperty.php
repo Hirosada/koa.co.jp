@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Suppliers extends Authenticatable
+class ConstructionProperty extends Authenticatable
 {
-    /** @var string */
-    protected $table = 'suppliers';
 
     /** @var string */
-    protected $primaryKey = 'suppliers_id';
+    protected $table = 'construction_property';
+
+    /** @var string */
+    protected $primaryKey = 'construction_property_id';
 
     /** @var bool */
     public $incrementing = false;

@@ -13,11 +13,11 @@ class CreteContactTable20210225061737 extends Migration
      */
     public function up()
     {
-        Schema::create('contacct', function (Blueprint $table) {
+        Schema::create('contact', function (Blueprint $table) {
             $table->charset = 'utf8mb3';
             $table->collation = 'utf8_general_ci';
 
-            $table->bigInteger('contacct_id')->primary()->comment('お問い合わせID');
+            $table->bigInteger('contact_id')->primary()->comment('お問い合わせID');
             $table->bigInteger('service_type')->nullable()->comment('サービス区分');
             $table->string('name', 255)->nullable()->comment('名前');
             $table->string('name_kana', 255)->nullable()->comment('ふりがな');
@@ -42,16 +42,16 @@ class CreteContactTable20210225061737 extends Migration
             $table->timestamp('deleted_at')->nullable()->comment('削除日時');
 
         });
-        DB::statement("ALTER TABLE contacct COMMENT 'お問い合わせ'");
+        DB::statement("ALTER TABLE contact COMMENT 'お問い合わせ'");
 
-        Schema::create('contacct_seq', function (Blueprint $table) {
+        Schema::create('contact_seq', function (Blueprint $table) {
             $table->charset = 'utf8mb3';
             $table->collation = 'utf8_general_ci';
 
-            $table->bigInteger('contacct_id')->autoIncrement()->comment('お問い合わせID');
+            $table->bigInteger('contact_id')->autoIncrement()->comment('お問い合わせID');
             $table->timestamp('created_at')->default(DB::raw('NOW()'))->comment('登録日時');
         });
-        DB::statement("ALTER TABLE contacct_seq COMMENT 'お問い合わせシーケンス'");
+        DB::statement("ALTER TABLE contact_seq COMMENT 'お問い合わせシーケンス'");
     }
 
     /**
@@ -61,7 +61,7 @@ class CreteContactTable20210225061737 extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacct');
-        Schema::dropIfExists('contacct_seq');
+        Schema::dropIfExists('contact');
+        Schema::dropIfExists('contact_seq');
     }
 }

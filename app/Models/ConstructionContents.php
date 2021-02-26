@@ -3,17 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class ConstructionProperty extends BaseModel
+class ConstructionContents extends Authenticatable
 {
-    use Seq;
-    use SoftDeletes;
+    /** @var string */
+    protected $table = 'construction_contents';
 
     /** @var string */
-    protected $table = 'construction_property';
-
-    /** @var string */
-    protected $primaryKey = 'construction_property_id';
+    protected $primaryKey = 'construction_contents_id';
 
     /** @var bool */
     public $incrementing = false;
