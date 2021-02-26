@@ -16,15 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/top', 'Main\MainController@index')->name('home');
-Route::get('/news/detail/{$news_id}', 'Main\MainController@newsDetail')->name('news.detail');
+Route::get('/company', 'Main\MainController@aboutUs')->name('company.profile');
+Route::get('/news/detail/{$news_id?}', 'Main\MainController@newsDetail')->name('news.detail');
+Route::get('/news', 'Main\MainController@news')->name('news.top');
+Route::get('/business/detail/{$business_id}', 'Main\MainController@businessDetail')->name('business.detail');
 
-Route::get('news', function(){
-	return view('news');
-});
-
-Route::get('company', function() {
-	return view('company');
-});
 
 Route::get('service', function(){
 	return view('service');

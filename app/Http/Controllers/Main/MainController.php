@@ -28,6 +28,19 @@ class MainController extends Controller
     }
 
     /**
+     * aboutUs
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function aboutUs()
+    {
+
+        return view('company', [
+
+        ]);
+    }
+
+    /**
      * getAllNews
      */
     public function getAllNews()
