@@ -18,20 +18,20 @@
       </ul>
     </div>
     <div>
-      <div class="center clearfix mgT50px slide-bottom sectionbg" style="padding: 0 79px;">
-        <div class="center mgT100px">
-          <span class="topic7 f30px">News</span>
+      <div class="center mgT50px slide-bottom w100">
+        <span class="topic7 f30px">News</span>
+        <div class="w100">
+          @foreach ($newsList as $news)
+            <ul class="mgT20px topic7 lihidden imgHover">
+              <a href="/news/detail/{{ $news->news_id }}" class="textnone black">
+                <li><img src="img/news/top/{{ $news->news_id }}.jpg" width="259" height="194"></li>
+                <li class="topic4 f15px">News</li>
+                <li class="topic6">{{ $news->news_display_started_at }}</li>
+                <li>{{ $news->news_tittle }}</li>
+              </a>
+            </ul>
+          @endforeach
         </div>
-        @foreach ($newsList as $news)
-          <ul class="fL topic7 lihidden imgHover">
-            <a href="#" class="textnone black">
-              <li><img src="img/news/torii.jpg" width="259" height="194"></li>
-              <li class="topic4 f15px">News</li>
-              <li class="topic6">{{ $news->news_display_started_at }}</li>
-              <li>{{ $news->news_tittle }}</li>
-            </a>
-          </ul>
-        @endforeach
     </div>
     <div class="anime center mgT100px slide-bottom">
       <a href="/todo" class="btn topic7 cp textnone">Read More</a>
@@ -42,64 +42,21 @@
     <span class="topic7 f30px">Service</span>
   </div>
 
-
-  <!-- 木箱 -->
-  <div class="clearfix mgT100px center">
-    <div class="fL w50 mgL100px slide-left">
-      <h2 class="topic7">木箱ー製函ー</h2>
-      <span class="topic7 lineH3">
-        当社は、昭和16年３月に福岡市東区にて創業以来、梱包用木枠製造を扱っております。<br>
-        長年培ってきたノウハウを生かして、<br>
-        大事な 製品を安全に送ることをモットーに製作して参りました。<br>
-        破損トラブルを防ぐ為に製品の特性、重量など輸送条件に合わせて木枠を製作致しますので、<br>
-        衝撃に弱い精密機械などの製品も安心安全に運搬することが出来ます。
-      </span>
+  @foreach ($businessList as $business)
+    <div class="mgT100px center">
+      <div class="w50 slide-left dspIB mgR20px">
+        <h2 class="topic7">{{ $business->business_name }}</h2>
+        <span class="topic7 lineH3">{{ $business->business_contents }}
+        </span>
+      </div>
+      <div class="slide-right dspIB">
+        <img src="img/service/top/{{ $business->business_id }}.jpg" width="400" height="320">
+      </div>
     </div>
-    <div class="fL mgL30px slide-right">
-      <img src="img/service/seikan_1.jpg">
+    <div class="center mgT50px">
+      <a href="#" class="textnone"><span class="btn topic7 cp">Read More</span></a>
     </div>
-  </div>
-  <div class="center mgT50px">
-    <a href="#" class="textnone"><span class="btn topic7 cp">Read More</span></a>
-  </div>
-
-  <!-- 店舗デザイン -->
-  <div class="clearfix mgT100px center">
-    <div class="fL w50 mgL100px mgT100px slide-left">
-      <h2 class="topic7">店舗デザイン</h2>
-      <span class="topic7 lineH3">
-      興亜では、屋外サインのイメージデザインも含めた、<br>商業施設、文化施設、医療施設など店舗デザイン事業を展開しています。<br>
-      企画・設計・施工まで一貫して自社で行っていますので、<br>無駄もありませんし、サポートも充実しています。<br>
-      また、お店がオープンした後のアドバイス等も行っておりますので、何でもご相談下さい。
-      </span>
-    </div>
-    <div class="fL mgL30px mgT100px slide-right">
-      <img src="img/service/tenpo_1.jpg" class="img_box">
-    </div>
-  </div>
-  <div class="center mgT50px">
-    <a href="#" class="textnone"><span class="btn topic7 cp">Read More</span></a>
-  </div>
-
-  <!-- デザイン家具 -->
-  <div class="clearfix mgT100px center">
-    <div class="fL w50 mgL100px mgT100px slide-left">
-      <h2 class="topic7">デザイン家具</h2>
-      <span class="topic7 lineH3">
-        <span class="topic7 f20px">家具を作る会社だから出来る、ぴったりはまる建具</span><br>
-        当社では、家具や、作り付け家具の製作を行っております。<br>
-        そこでお客様にご提案できるのは、それぞれの住宅に合った家具作りです。<br>
-        合っていれば、より空間を広く使え、なおかつ全体の雰囲気の調和もいいです。
-      </span>
-    </div>
-    <div class="fL mgL30px mgT100px slide-right">
-      <img src="img/service/kagu_1.jpg" class="img_box">
-    </div>
-  </div>
-  <div class="center mgT50px">
-    <a href="#" class="textnone"><span class="btn topic7 cp">Read More</span></a>
-  </div>
-
+  @endforeach
   <div class="center mgT100px">
     <span class="topic7 f30px">Access</span>
   </div>

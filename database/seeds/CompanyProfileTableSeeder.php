@@ -25,6 +25,8 @@ class CompanyProfileTableSeeder extends Seeder
                 'head_office_address' => '福岡県福岡市東区筥松2丁目6番9号',
                 'factory_postal_code' => '',
                 'factory_address' => '福岡県糟屋郡須恵町大字植木字中野1883-1',
+                'company_phone_number' => '092-621-1194',
+                'company_fax_number' => '092-621-1225',
                 'ceo' => '長野吉弘',
             ],
         ]);

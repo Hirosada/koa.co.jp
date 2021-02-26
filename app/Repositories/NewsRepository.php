@@ -8,7 +8,7 @@ class NewsRepository extends BaseRepository
 {
     /**
      * getAllNews
-     * 
+     *
      */
     public function getAllNews()
     {
