@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Main;
 
-use Illuminate\Http\Request;
-use App\Todos;
 use App\Models\CompanyProfile;
-use App\Services\NewsService;
 use App\Services\BusinessService;
+use App\Services\CompanyProfileService;
+use App\Services\NewsService;
+use App\Todos;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
@@ -44,4 +45,12 @@ class MainController extends Controller
         return $businessService->getService();
     }
 
+    /**
+     * getCampany
+     */
+    public function getCompanyProfile()
+    {
+        $companyProfileService = new CompanyProfileService();
+        return $companyProfileService->getCompanyProfile();
+    }
 }

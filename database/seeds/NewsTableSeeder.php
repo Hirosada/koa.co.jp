@@ -29,7 +29,7 @@ class NewsTableSeeder extends Seeder
             ],
             [
                 'news_id' => '3',
-                'news_tittle' => '須恵町プレミアム付住宅リフォーム券 <br>取扱加盟店になりました。',
+                'news_tittle' => '須恵町プレミアム付住宅リフォーム券取扱加盟店になりました。',
                 'news_contents' => '不法投棄対策のはり紙をしても後を立たない<br>ゴミの不法投棄をなくす為に作られたミニ鳥居です。<br>不法投棄者の心理的な効果を狙って製作しています。<br>',
                 'news_display_started_at' => '2019-02-19 00:00:00',
                 'news_display_finished_at' => '2025-02-19 00:00:00',

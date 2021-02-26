@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/top', 'Main\MainController@index')->name('home');
+Route::get('/news/detail/{$news_id}', 'Main\MainController@newsDetail')->name('news.detail');
 
 Route::get('news', function(){
 	return view('news');

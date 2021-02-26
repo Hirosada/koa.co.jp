@@ -28,6 +28,8 @@ class CreteCompanyProfileTable20210225052440 extends Migration
             $table->string('head_office_address', 255)->nullable()->comment('所在地 本社 郵便番号');
             $table->string('factory_postal_code', 255)->nullable()->comment('所在地 工場 郵便番号');
             $table->string('factory_address', 255)->nullable()->comment('所在地 工場 住所');
+            $table->string('company_phone_number', 255)->nullable()->comment('電話番号');
+            $table->string('company_fax_number', 255)->nullable()->comment('FAX番号');
             $table->string('ceo', 255)->nullable()->comment('代表取締役');
             $table->timestamp('form1_updated_at')->default(DB::raw('NOW()'))->comment('フォーム1更新日時');
             $table->timestamp('created_at')->default(DB::raw('NOW()'))->comment('登録日時');

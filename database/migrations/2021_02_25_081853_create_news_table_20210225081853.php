@@ -20,6 +20,7 @@ class CreateNewsTable20210225081853 extends Migration
             $table->bigInteger('news_id')->primary()->comment('ニュースID');
             $table->string('news_tittle')->nullable()->comment('タイトル');
             $table->mediumText('news_contents')->nullable()->comment('内容');
+            $table->string('top_img', 255)->nullable()->comment('トップ画像');
             $table->timestamp('news_display_started_at')->nullable()->comment('表示開始日時');
             $table->timestamp('news_display_finished_at')->nullable()->comment('表示終了日時');
             $table->timestamp('form1_updated_at')->default(DB::raw('NOW()'))->comment('フォーム1更新日時');
