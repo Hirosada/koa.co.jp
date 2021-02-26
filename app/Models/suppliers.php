@@ -3,12 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Suppliers extends BaseModel
+class Suppliers extends Authenticatable
 {
-    use Seq;
-    use SoftDeletes;
-
     /** @var string */
     protected $table = 'suppliers';
 

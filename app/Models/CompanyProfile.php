@@ -3,17 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class NewsImg extends BaseModel
+class CompanyProfile extends Authenticatable
 {
-    use Seq;
-    use SoftDeletes;
+    /** @var string */
+    protected $table = 'company_profile';
 
     /** @var string */
-    protected $table = 'news_img';
-
-    /** @var string */
-    protected $primaryKey = 'news_img_id';
+    protected $primaryKey = 'company_id';
 
     /** @var bool */
     public $incrementing = false;
