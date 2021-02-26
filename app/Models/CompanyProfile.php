@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Suppliers;
 
 class CompanyProfile extends Authenticatable
 {
@@ -20,5 +22,19 @@ class CompanyProfile extends Authenticatable
     protected $dates = [
         'form1_updated_at',
     ];
+
+    /**
+     * getSuppliers
+     *
+     * @return HasMany
+     */
+    public function getSuppliers(): HasMany
+    {
+        return $this->hasMany(
+            Suppliers::class,
+            'company_id',
+            'company_id'
+        )->orderBy('display_order', 'ASC');
+    }
 
 }

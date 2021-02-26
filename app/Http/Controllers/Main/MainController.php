@@ -34,9 +34,11 @@ class MainController extends Controller
      */
     public function aboutUs()
     {
+        $companyProfile = $this->getCompanyProfile();
 
+        // dd($companyProfile['suppliers']);
         return view('company', [
-
+            'companyProfile' => $companyProfile,
         ]);
     }
 
@@ -59,7 +61,7 @@ class MainController extends Controller
     }
 
     /**
-     * getCampany
+     * getCompanyProfile
      */
     public function getCompanyProfile()
     {
