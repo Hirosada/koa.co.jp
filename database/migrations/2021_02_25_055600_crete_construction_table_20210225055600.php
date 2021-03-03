@@ -18,7 +18,7 @@ class CreteConstructionTable20210225055600 extends Migration
             $table->collation = 'utf8_general_ci';
 
             $table->bigInteger('construction_id')->primary()->comment('施工ID');
-            $table->string('construction_tittle', 255)->nullable()->comment('タイトル');
+            $table->string('construction_title', 255)->nullable()->comment('タイトル');
             $table->timestamp('form1_updated_at')->default(DB::raw('NOW()'))->comment('フォーム1更新日時');
             $table->timestamp('created_at')->default(DB::raw('NOW()'))->comment('登録日時');
             $table->timestamp('updated_at')->default(DB::raw('NOW()'))->comment('更新日時');
