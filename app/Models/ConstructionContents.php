@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class ConstructionContents extends Authenticatable
+class ConstructionContents extends Model
 {
     /** @var string */
     protected $table = 'construction_contents';
@@ -21,4 +21,13 @@ class ConstructionContents extends Authenticatable
         'form1_updated_at',
     ];
 
+    public function construction()
+    {
+        return $this->belongsTo('App\Models\Construction', 'construction_id');
+    }
+
+    public function constructionProperty()
+    {
+        return $this->belongsTo(ConstructionProperty::class, 'construction_contents_id');
+    }
 }
