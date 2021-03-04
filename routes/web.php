@@ -26,9 +26,8 @@ Route::get('service', function(){
 	return view('service');
 });
 
-Route::get('works', function(){
-	return view('works');
-});
+Route::get('works', 'Main\WorkController@index')->name('work.index');
+
 
 Route::get('contact', function(){
 	return view('contact');
@@ -47,4 +46,3 @@ Route::get('/form', 'formController@index');
 Route::post('complate', 'formController@get_data');
 
 
-Route::resource('todo', 'TopController'); 

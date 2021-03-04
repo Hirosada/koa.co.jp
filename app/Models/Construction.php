@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class construction extends Authenticatable
+class construction extends Model
 {
     /** @var string */
     protected $table = 'construction';
@@ -20,5 +21,15 @@ class construction extends Authenticatable
     protected $dates = [
         'form1_updated_at',
     ];
+
+    /**
+     * 
+     * @return HasMany
+     */
+    public function constructionProperty()
+    {
+        dd($this->hasMany(ConstructionProperty::class, 'construction_id'));
+        return $this->hasMany(ConstructionProperty::class, 'construction_id');
+    }
 
 }

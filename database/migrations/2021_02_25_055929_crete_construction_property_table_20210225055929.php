@@ -24,6 +24,7 @@ class CreteConstructionPropertyTable20210225055929 extends Migration
             $table->timestamp('created_at')->default(DB::raw('NOW()'))->comment('登録日時');
             $table->timestamp('updated_at')->default(DB::raw('NOW()'))->comment('更新日時');
             $table->timestamp('deleted_at')->nullable()->comment('削除日時');
+            $table->foreign('construction_id')->references('construction_id')->on('construction');
 
         });
         DB::statement("ALTER TABLE construction_property COMMENT '施工例物件'");

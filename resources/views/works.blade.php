@@ -29,95 +29,15 @@
     <!-- 店舗　商業　文化施設 -->
     <span class="topic7 f30px">店舗　商業　文化施設</span>
     <div class="mgT50px">
+      @foreach ($arrConstructionOne as $key => $item)
       <ul class="dspIB cp_tilt" style="width:216px;">
         <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/driving.jpg"></li>
-          <li class="lihidden">福岡市自動車学校案内所<br>（福岡市）</li>
+          <li class="lihidden"><img src="{{ $item->constructionContents[0]->construction_img_path }}"></li>
+          <li class="lihidden">{{$item->property_name}}<br>（{{$item->location}}）</li>
         </a>
       </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/royal.jpg"></li>
-          <li class="lihidden">下関ロイヤルボール<br>（山口県下関）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/kensokuen.jpg"></li>
-          <li class="lihidden">健足園<br>（福岡市大名）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/museum.jpg"></li>
-          <li class="lihidden">中村美術館<br>（田川市）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/mochitto.jpg"></li>
-          <li class="lihidden">もちっとクイズモール店<br>（博多区東那珂）
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/phoenix.jpg"></li>
-          <li class="lihidden">フェニックス<br>（宮崎市）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/parish.jpg"></li>
-          <li class="lihidden">パリッシュ<br>（福岡市大名）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/denime.jpg"></li>
-          <li class="lihidden">デニム<br>（福岡市大名）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/shoolarue.jpg"></li>
-          <li class="lihidden">シューラルー<br>（糸島郡志摩町）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/guerlain.jpg"></li>
-          <li class="lihidden">ゲラン<br>（四国）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/clubocean.jpg"></li>
-          <li class="lihidden">クラブオーシャン<br>（福岡市春吉）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/quatrereves.jpg"></li>
-          <li class="lihidden">キャトルレーヴ<br>（福岡市天神）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/colomony.jpg"></li>
-          <li class="lihidden">カラモニー博多U<br>（福岡市城西）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/motoya.jpg"></li>
-          <li class="lihidden">素屋クイズモール店<br>（福岡市東那珂）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/mraoki.jpg"></li>
-          <li class="lihidden">焼肉のミスター青木<br>（飯塚市）</li>
-        </a>
-      </ul>
+      @endforeach
+
       <!-- 隠す -->
       <ul class="dspIB cp_tilt hidden" style="width:216px;">
         <a href="#" class="textnone topic7 black">
@@ -268,65 +188,14 @@
     <span class="topic7 f30px">リフォーム　リノベーション</span>
   </div>
     <div class="mgT50px center">
+      @foreach ($arrConstructionTwo as $key => $val)
       <ul class="dspIB cp_tilt " style="width:216px;">
         <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/mansion01.jpg"></li>
-          <li class="lihidden">マンションリフォーム<br>（福岡市博多区）</li>
+          <li class="lihidden"><img src="{{ $val->constructionContents[0]->construction_img_path }}"></li>
+          <li class="lihidden">{{ $val->property_name }}<br>（{{ $val->location }}）</li>
         </a>
       </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/mansion04.jpg"></li>
-          <li class="lihidden">マンションリフォーム<br>（福岡市六本松）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/mansion02.jpg"></li>
-          <li class="lihidden">マンションリフォーム<br>（福岡市六本松）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/mansion03.jpg"></li>
-          <li class="lihidden">マンションリフォーム<br>（福岡市六本松）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/kutsubako.jpg"></li>
-          <li class="lihidden">玄関収納<br>（福岡市西新）</li>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/m_kagu.jpg"></li>
-          <li class="lihidden">家具工事<br>（福岡市百道浜）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/naganotei.jpg"></li>
-          <li class="lihidden">戸建てRC造住宅リフォーム<br>（福岡市東区）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/ttei_title.jpg"></li>
-          <li class="lihidden">福岡市T邸 リノベーション<br>（福岡市西区区）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/title.jpg"></li>
-          <li class="lihidden">マンションリノベーション<br>（福岡市中央区）</li>
-        </a>
-      </ul>
-      <ul class="dspIB cp_tilt " style="width:216px;">
-        <a href="#" class="textnone topic7 black">
-          <li class="lihidden"><img src="img/works/mansion05.jpg"></li>
-          <li class="lihidden">マンションリノベーション<br>（福岡市中央区）</li>
-        </a>
-      </ul>
+      @endforeach
     </div>
   </div>
   <div class="center mgT100px">
