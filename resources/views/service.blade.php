@@ -54,7 +54,7 @@
       <div class="clearfix mgT150px center">
         <div class="fL w50 mgL100px mgT100px slide-left">
           <div class="center f30px">
-            <span class="topic7">洗練された空間　と　魅力的な演出</span>
+            <span class="topic7">洗練された空間　と　魅力的な岸本</span>
             
           </div>
           <h2 class="topic7">店舗デザイン</h2>
