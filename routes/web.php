@@ -29,9 +29,9 @@ Route::get('service', function(){
 Route::get('works', 'Main\WorkController@index')->name('work.index');
 
 
-Route::get('contact', function(){
+Route::get('/contact', function(){
 	return view('contact');
-});
+})->name('contact');
 
 Route::get('/service/tenpo', function(){
 	return view('tenpo_detail');
@@ -41,8 +41,24 @@ Route::get('/service/seiko', function(){
 	return view('seiko_detail');
 });
 
+
+
 Route::get('/form', 'formController@index');
 
-Route::post('complate', 'formController@get_data');
+//Route::post('complate', 'formController@get_data');
 
+
+// お問い合わせ入力ページ
+Route::get('/', 'formController@index')->name('contact');
+
+Route::post('/contact', 'formController@get_data');
+
+// 確認ページ
+Route::get('/confirm', 'formController@confirm')->name('aho');
+
+// DB挿入、メール送信
+Route::post('/process', 'formController@process');
+
+// 完了ページ
+Route::get('/complate', 'formController@complate')->name('complate');
 

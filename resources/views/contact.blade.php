@@ -17,7 +17,7 @@
             <li class="dspIB"><a href="/form" class="textnone black topic7 mgR50px menu2Hover"> Contact </a></li>
             <li class="dspIB"><a href="/top" class="textnone black topic7 mgR50px menu2Hover"> Top</a></li>
         </ul>
-        <form class="center contactForm" action="complate" method="POST">
+        <form class="center contactForm" action="/contact" method="POST">
             @csrf
             <div>
                 <fieldset>
@@ -26,26 +26,41 @@
                     <span style="color: red;">※必須</span><br>
                     <label for="exampleInputEmail1">名前</label>
                     <input type="name" class="form-control form-fram" id="exampleInputEmail1" name="name"  placeholder="例）田中　太郎">
+                    @if (isset($er['name']))
+                        <p class="error-message">{{ $er['name'] }}</p>
+                    @endif
                 </div>
                 <div class="form-group mgT50px topic7 black">
                     <span style="color: red;">※必須</span><br>
                     <label for="exampleInputEmail1">フリガナ</label>
                     <input type="name" class="form-control form-fram" id="exampleInputEmail1" name="subname" placeholder="例）タナカ　タロウ">
+                    @if (isset($er['subname']))
+                        <p class="error-message">{{ $er['subname'] }}</p>
+                    @endif
                 </div>
                 <div class="form-group mgT50px topic7 black">
                     <span style="color: red;">※必須</span><br>
                     <label for="exampleInputEmail1">メールアドレス</label>
                     <input class="form-control form-fram" id="exampleInputEmail1" name="email" placeholder="例）info@exam.co.jp">
+                    @if (isset($er['email']))
+                        <p class="error-message">{{ $er['email'] }}</p>
+                    @endif
                 </div>
                 <div class="form-group mgT50px topic7 black">
                     <span style="color: red;">※必須</span><br>
                     <label for="exampleInputPassword1">メールアドレス（確認用）</label>
                     <input class="form-control form-fram" id="exampleInputPassword1" name="confemail" placeholder="例）info@exam.co.jp">
+                    @if (isset($er['email']))
+                        <p class="error-message">{{ $er['email'] }}</p>
+                    @endif
                 </div>
                 <div class="form-group mgT50px topic7 black">
                     <span style="color: red;">※必須</span><br>
                     <label for="exampleInputPassword1">電話番号</label>
                     <input class="form-control form-fram" id="exampleInputPassword1" name="tel" placeholder="例）xxx-xxxx-xxxx">
+                    @if (isset($er['tel']))
+                        <p class="error-message">{{ $er['tel'] }}</p>
+                    @endif
                 </div>
                 <div class="form-group mgT50px topic7 black">
                     <label for="exampleInputPassword1">会社名</label>
@@ -59,10 +74,16 @@
                     <span style="color: red;">※必須</span><br>
                     <label for="exampleInputPassword1">郵便番号</label>
                     <input class="form-control form-fram" id="exampleInputPassword1" name="postalCode" placeholder="例）XXX-XXX">
+                    @if (isset($er['postalCode']))
+                        <p class="error-message">{{ $er['postalCode'] }}</p>
+                    @endif
                 </div>
                 <div class="form-group mgT50px topic7 black">
                     <span style="color: red;">※必須</span><br>
                     <label for="exampleInputPassword1">住所</label>
+                    @if (isset($er['address']))
+                        <p class="error-message">{{ $er['address'] }}</p>
+                    @endif
                     <select class="form-control form-fram w50 mg0A" id="exampleSelect1" name="address">
                         <option value="" selected>都道府県</option>
                         <option value="北海道">北海道</option>
@@ -114,10 +135,16 @@
                         <option value="沖縄県">沖縄県</option>
                     </select>
                     <div class="form-group mgT50px topic7 black">
-                        <input class="form-control form-fram" id="exampleInputPassword1" name="aderess2" placeholder="市町村">
+                        <input class="form-control form-fram" id="exampleInputPassword1" name="address2" placeholder="市町村">
+                        @if (isset($er['address2']))
+                            <p class="error-message">{{ $er['address2'] }}</p>
+                        @endif
                     </div>
                     <div class="form-group mgT50px topic7 black">
                         <input class="form-control form-fram" id="exampleInputPassword1" name="subadress" placeholder="丁目番地">
+                        @if (isset($er['subadress']))
+                            <p class="error-message">{{ $er['subadress'] }}</p>
+                        @endif
                     </div>
                     <div class="form-group mgT50px">
                         <label for="exampleSelect1">お問い合わせサービス</label>
@@ -128,11 +155,17 @@
                             <option value="3">製函（木箱）</option>
                             <option value="4">その他</option>
                         </select>
+                        @if (isset($er['servicetype']))
+                            <p class="error-message">{{ $er['servicetype'] }}</p>
+                        @endif
                     </div>
                 
                     <div class="form-group mgT50px">
                         <label for="exampleTextarea">お問い合わせ内容</label>
                         <textarea class="form-control form-fram" id="exampleTextarea" rows="3" style="height: 300px" name="inquiry"></textarea>
+                        @if (isset($er['inquiry']))
+                            <p class="error-message">{{ $er['inquiry'] }}</p>
+                        @endif
                     </div>
                     <a href="#">
                         <input type="submit" class="btn btn-primary" value="確認画面へ">
